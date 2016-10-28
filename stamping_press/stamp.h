@@ -7,4 +7,4 @@ namespace stamping_press {
  void insert_plate(int cols, int rows);
  void eject_plate();
  void stamp(int col, int row);
-};
+}

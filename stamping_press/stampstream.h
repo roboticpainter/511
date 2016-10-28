@@ -6,14 +6,32 @@
 #ifndef STAMPSTREAM_H
 #define STAMPSTREAM_H
 
-class Stampstream
+#include <ostream>
+#include "stampbuf.h"
+
+using namespace std;
+
+class stampstream : public ostream
 {
   public:
-  Stampstream(int length, int height);
+    stampstream(int col, int row);
+    ~stampstream();
 
   private:
-  int m_length;
-  int m_height;
+  
+};
+
+ostream& endrow(ostream& os);
+
+class row 
+{
+  friend ostream& operator<<(ostream& os, const row& ro);
+  
+  public:
+    row(int r);
+    int get_row() const;
+  private: 
+    int m_row;
 };
 
 #endif 
