@@ -27,11 +27,11 @@ class TrackingDeque : public deque<T>
     void pop_front();
 
   private:
-    static int size;
+    int size;
 };
 
 template <typename T>
-TrackingDeque<T>::TrackingDeque()
+TrackingDeque<T>::TrackingDeque() : deque<T>()
 {
   size = 0;
 }
@@ -45,27 +45,27 @@ TrackingDeque<T>::~TrackingDeque()
 template <typename T>
 void TrackingDeque<T>::push_front(T element)
 {
-  push_front(element);
+  deque<T>::push_front(element);
   size++;
 }
 
 template <typename T>
 void TrackingDeque<T>::push_back(T element)
 {
-  push_back(element);
+  deque<T>::push_back(element);
   size++;
 }
 
 template<typename T>
 T TrackingDeque<T>::front()
 {
-  return (front());
+  return (deque<T>::front());
 }
 
 template<typename T>
 void TrackingDeque<T>::pop_front()
 {
-  pop_front();
+  deque<T>::pop_front();
 }
 
 #endif 
